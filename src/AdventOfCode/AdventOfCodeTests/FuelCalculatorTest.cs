@@ -14,10 +14,10 @@ namespace AdventOfCodeTests
         public void CalculateShouldReturnExpectedFuelValue(int input, int expected)
         {
             // Arrange
-            var fuel = new FuelCalculator();
+            var fuel = new Day1Puzzle();
 
             // Act 
-            var calculatedFuel = fuel.Calculate(input);
+            var calculatedFuel = fuel.CalculateFuel(input);
 
             // Assert
             Assert.Equal(expected, calculatedFuel);
@@ -31,7 +31,7 @@ namespace AdventOfCodeTests
         public void SumOfMassRequirementsShouldReturnExpectedValues(int input, int expected)
         {
             // Arrange
-            var fuel = new FuelCalculator();
+            var fuel = new Day1Puzzle();
 
             // Act 
             var sumOfFuel = fuel.SumOfMassRequirements(input);

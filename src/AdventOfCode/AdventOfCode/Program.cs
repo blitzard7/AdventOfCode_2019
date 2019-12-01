@@ -1,5 +1,4 @@
 ﻿using AdventOfCode.Modules;
-using System;
 using System.IO;
 using System.Linq;
 
@@ -9,14 +8,12 @@ namespace AdventOfCode
     {
         static void Main(string[] args)
         {
-            var data = File.ReadAllLines("./Data/Day1.txt").Select(x => int.Parse(x));
-            var fuel = new FuelCalculator();
-
-            var result = data.Sum(fuel.Calculate);
-            var sumFuel = data.Sum(fuel.SumOfMassRequirements);
-
-            Console.WriteLine(result);
-            Console.WriteLine(sumFuel);
+            var data = ReadPuzzleData("./Data/Day1.txt").Select(x => int.Parse(x));
+            var fuel = new Day1Puzzle();
+            var result = data.Sum(fuel.CalculateFuel); // puzzle1: 3233481
+            var sumFuel = data.Sum(fuel.SumOfMassRequirements); // puzzle2: 4847351
         }
+
+        private static string[] ReadPuzzleData(string path) => File.ReadAllLines(path);
     }
 }
