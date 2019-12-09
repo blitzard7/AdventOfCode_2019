@@ -1,19 +1,12 @@
-﻿using AdventOfCode.Modules;
-using System.IO;
-using System.Linq;
+﻿using AdventOfCode.Puzzles;
 
 namespace AdventOfCode
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var data = ReadPuzzleData("../../../../../data/day01.txt").Select(x => int.Parse(x));
-            var fuel = new Day1Puzzle();
-            var result = data.Sum(fuel.CalculateFuel); // puzzle1: 3233481
-            var sumFuel = data.Sum(fuel.SumOfMassRequirements); // puzzle2: 4847351
+            Day2Puzzle.Start();
         }
-
-        private static string[] ReadPuzzleData(string path) => File.ReadAllLines(path);
     }
 }
